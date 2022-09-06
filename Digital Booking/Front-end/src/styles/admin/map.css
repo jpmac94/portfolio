@@ -1,0 +1,54 @@
+.map-input{
+    width: 99%;
+    background: var(--basic-color);
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(0,0,0,.5);
+  
+    box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 15%);
+    margin-bottom: 20px;
+    font-size: 1rem;
+    outline: none;
+}
+.map-popover{
+    background-color: #f5f5f5;
+
+    max-height: 300px;
+}
+.map-option {
+    padding: 10px 12px 12px;
+    border-bottom: 1px solid rgba(0,0,0,.5);
+
+  }
+  
+  .map-option.option-current,
+  .map-option:hover {
+    background-color: rgba(0,0,0,0.1);
+  }
+  
+  .map-option.option-selected {
+    padding-right: 30px;
+    position: relative;
+  }
+  .locate{
+    font-size: 1rem;
+    font-weight: 600;
+    align-items: center;
+    padding: 0.8rem 3.1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    color: var(--basic-color);
+    cursor: pointer;
+  }
+  
+  .group2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px 20px;
+    grid-gap: 8px;
+  }

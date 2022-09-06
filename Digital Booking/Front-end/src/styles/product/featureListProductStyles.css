@@ -1,0 +1,22 @@
+.feature-products-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+.feature-products-container p span {
+    padding-left: 1rem;
+    color: var(--secondary-text-color);
+}
+.feature-products-container p svg path{
+    stroke: var(--secondary-color);
+}
+
+@media screen and (max-width: 768px) {
+    .feature-products-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}

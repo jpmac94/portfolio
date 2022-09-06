@@ -1,0 +1,319 @@
+/*-------Update main----------*/
+.container-all-update {
+    background-color: var(--basic-color);
+    margin: 2rem 0rem;
+    box-shadow: 0 10px 10px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+    width: 80%;
+    padding: 2rem 2rem 2rem 2rem;
+
+}
+
+.map-update-product {
+    padding: 2rem;
+    /* width: 80%;*/
+}
+
+.map-update-product div {
+    width: 100%;
+}
+
+.map-update-product #map {
+    height: 400px;
+}
+
+/*------Content-------*/
+/*
+.container-content-features{
+    display: flex;
+}
+
+.container-form-update, .containerFormClass-Features{
+    width: 50%;
+}*/
+.div-update-info {
+    display: flex;
+}
+
+.container-form-update .group {
+    width: 100%;
+}
+
+/*------- Features -------*/
+.features-update {
+    display: flex;
+    justify-content: space-around;
+}
+
+.carousel-features-update .content, .carousel-features-update .slick-dots{
+background-color: white;
+}
+.features-update svg,
+.carousel-features-update .features-div-render svg {
+    width: 3rem;
+    height: 3rem;
+}
+
+.carousel-features-update .features-div-render p {
+    font-size: 1.5rem;
+}
+
+.delete-feature-update,
+.add-feature-update, .ready-description-update {
+    /* width: 30%;*/
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+
+    border-radius: 10px;
+
+}
+
+.add-feature-update,
+.update-send {
+    color: white;
+    background-color: var(--secondary-color);
+
+    border: 1px solid var(--secondary-color);
+}
+
+.add-feature-update:hover,
+.update-send:hover {
+    color: var(--secondary-color);
+    background-color: var(--main-text-color);
+
+    border: 1px solid var(--main-text-color);
+    transition: 0.5s;
+}
+
+.delete-feature-update,
+.update-cancel {
+    color: white;
+    background-color: red;
+    border: 1px solid red;
+}
+
+.delete-feature-update:hover,
+.update-cancel:hover, .delete-description-update:hover  {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+    border: none;
+}
+
+/*--------- Description ---------*/
+.container-description-update {
+    margin-top: 3rem;
+}
+
+.descriptions-update {
+    display: flex;
+    justify-content: space-around;
+    color: var(--main-text-color);
+
+    border: 1px solid rgba(95, 91, 92, 0.173);
+    border-radius: 5px;
+}
+
+.block-description-update {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    width: 33%;
+}
+
+.input-update {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 2px 2px rgb(0 0 0 / 15%);
+ 
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5rem;
+}
+
+.block-description-update .inp {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.buttons-add-delete-update {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.delete-description-update,
+.add-description-update {
+    font-size: 1rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    color: var(--basic-color);
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.add-description-update {
+    background-color: var(--secondary-color);
+}
+
+.delete-description-update {
+    background-color: red;
+
+}
+
+.ready-description-update {
+    width: 30%;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    color: var(--basic-color);
+    background-color: var(--secondary-color);
+    border: none;
+    margin-top: 2rem;
+    align-self: center;
+}
+.ready-description-update:hover, .add-description-update:hover{
+    background-color: var(--main-text-color);
+    transition: 1s;
+}
+
+/*---------- Pictures-----------*/
+.pic-update {
+
+    height: 100%;
+}
+
+.pic-add-update {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-update-pictures {
+    margin-top: 3rem;
+
+}
+
+.pic-update .image-gallery-slides {
+    height: auto;
+}
+
+.pic-update img {
+    width: auto !important;
+    height: 550px;
+    border-radius: 1rem;
+}
+
+.containerFormClassNone {
+    display: none;
+}
+
+.containerFormPicU {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+/*thumbnail*/
+.pic-update .image-gallery-thumbnails-container .image-gallery-thumbnail span img {
+    height: 61.85px;
+
+}
+
+/*popup*/
+.overlayUpdate {
+    display: none;
+    position: absolute;
+}
+
+.overlay-activeUpdate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: visible;
+
+    background: rgba(56, 59, 88, 0.9);
+}
+
+.pop-up-update {
+    height: 50vh;
+}
+
+.container-close-update,
+.container-close-update img {
+    height: 100%;
+    border-radius: 1rem;
+}
+
+.close-cross {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-gallery-update {
+    position: relative;
+    right: 2rem;
+    top: 3rem;
+    font-size: 2rem;
+    padding: 5px;
+    color: var(--basic-color);
+    background-color: rgba(84, 87, 118, 0.7);
+    border-radius: 30%;
+    cursor: pointer;
+}
+
+.div-button-delete-picture {
+    display: flex;
+    justify-content: center;
+}
+
+.button-delete-picture {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background: red;
+    color: var(--main-bg-color);
+    cursor: pointer;
+    border: none;
+    border-radius: 1rem;
+}
+
+.pop-up-update .image-gallery-icon image-gallery-left-nav {
+    display: none;
+}
+
+/*------Send and cancel burttons*/
+.update-send,
+.update-cancel {
+    width: 10%;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+
+    border-radius: 10px;
+}
+
+.buttons-update-sendForm {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0rem;
+    gap: 1rem
+}

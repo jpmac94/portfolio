@@ -1,0 +1,33 @@
+footer{
+    background-color:var(--secondary-color) ;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    color: var(--basic-color);
+    padding:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.fab{
+    padding: 0px 8px;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        height: 34px;
+        font-size: 0.8rem;
+    }
+    .fab {
+        font-size: 1rem;
+    }
+}
+    
+
+@media screen and (max-width:470px){
+    .media{
+        display: none;
+    }
+}

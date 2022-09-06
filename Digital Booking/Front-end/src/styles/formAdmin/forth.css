@@ -1,0 +1,265 @@
+.todo-list {
+  background: #fff;
+  font-size: 15px;
+
+  margin: auto;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.Bblue {
+  outline: none;
+  padding: 18px 25px;
+  font-size: 15px;
+  margin: 20px;
+  border: 0px solid;
+  border-radius: 5px;
+  color: white;
+  background-color: #25b0bc;
+  text-align: center;
+}
+
+.Bblue:hover {
+  background-color: #166b72;
+}
+
+.Bblue:active {
+  background-color: #25b0bc;
+}
+
+.Bpink {
+  outline: none;
+  padding: 8px;
+  font-size: 15px;
+  border: 0px solid;
+  border-radius: 5px;
+  color: white;
+  background-color: #e95678;
+}
+
+.Bpink:active {
+  background-color: #e95678;
+}
+
+.Bpink:hover {
+  background-color: #c23455;
+}
+
+.Bpink .Bblue {
+  outline: none;
+  padding: 8px;
+  font-size: 15px;
+  border: 0px solid;
+  border-radius: 5px;
+  color: black;
+}
+
+/** TODO*/
+.file-input {
+  padding: 2px;
+  background: #f8f8f8;
+
+  display: flex;
+}
+
+.file-input>.text {
+  outline: none;
+  padding: 0px 10px;
+  font-size: 15px;
+  width: 100%;
+  height: 46px;
+  background: transparent;
+  border: 0px solid;
+}
+
+.todo {
+  display: block;
+  position: relative;
+  padding: 16px 20px 15px 10%;
+  margin: 0 auto;
+  cursor: pointer;
+  border-bottom: solid 1px #ddd;
+}
+
+.todo:last-child {
+  border-bottom: none;
+}
+
+.todo.new-item {
+  opacity: 0;
+  transform: translateX(100px);
+  animation: fadeIn 0.3s linear forwards;
+}
+
+.todo__state {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.todo__text {
+  color: #076b74;
+  text-align: left;
+  transition: all 0.2s linear 0.2s;
+  padding: 15px 0px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  line-break: anywhere;
+}
+
+.todo__icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: auto;
+  margin: auto;
+  fill: none;
+  stroke: #42d7e4;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.todo__line,
+.todo__box,
+.todo__check {
+  transition: stroke-dashoffset 0.4s cubic-bezier(0.9, 0, 0.5, 1);
+}
+
+.todo__circle {
+  stroke: #42d7e4;
+  stroke-dasharray: 1 6;
+  stroke-width: 0;
+  transform-origin: 13.5px 12.5px;
+  transform: scale(0.4) rotate(0deg);
+  animation: none 0.4s linear;
+}
+
+.container-img-create {
+  height: 400px;
+}
+
+.container-img-create .image-gallery,
+.container-img-create .image-gallery-content,
+.container-img-create .image-gallery-slide-wrapper,
+.container-img-create .image-gallery-slides {
+  height: 400px;
+}
+
+.container-img-create .image-gallery .image-gallery-content .image-gallery-slide-wrapper .image-gallery-slides .image-gallery-slide .image-gallery-image {
+  width: 100%;
+}
+
+.text-limit {
+  padding: 8px;
+  color: var(--main-text-color);
+}
+
+/*product admi*/
+.description-create-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 2rem;
+  color: var(--main-text-color);
+  line-break: anywhere;
+ 
+}
+.description-of-product-create{
+   line-break: anywhere;
+}
+.container-text .texts{
+  color: var(--main-text-color);
+}
+
+.description-block-create{
+  margin-top: 2rem;
+}
+.features-create-product{
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0rem;
+}
+.features-create-product svg{
+  width: 3rem;
+  height: 3rem;
+}
+.button-send-create-product{
+  display: flex;
+}
+@keyframes explode {
+  30% {
+    stroke-width: 3;
+    stroke-opacity: 1;
+    transform: scale(0.8) rotate(40deg);
+  }
+
+  100% {
+    stroke-width: 0;
+    stroke-opacity: 0;
+    transform: scale(1.1) rotate(60deg);
+  }
+}
+
+.todo__box {
+  stroke-dasharray: 56.1053, 56.1053;
+  stroke-dashoffset: 0;
+  transition-delay: 0.08s;
+}
+
+.todo__check {
+  stroke: #42d7e4;
+  stroke-dasharray: 9.8995, 9.8995;
+  stroke-dashoffset: 9.8995;
+  transition-duration: 0.16s;
+}
+
+.todo__line {
+  stroke-dasharray: 168, 1684;
+  stroke-dashoffset: 168;
+}
+
+.todo__circle {
+  animation-delay: 0.28s;
+  animation-duration: 0.28s;
+}
+
+.todo__state:checked~.todo__text {
+  transition-delay: 0s;
+  color: #a5e7ec;
+  opacity: 0.6;
+}
+
+.todo__state:checked~.todo__icon .todo__box {
+  stroke-dashoffset: 56.1053;
+  transition-delay: 0s;
+}
+
+.todo__state:checked~.todo__icon .todo__line {
+  stroke-dashoffset: -8;
+}
+
+.todo__state:checked~.todo__icon .todo__check {
+  stroke-dashoffset: 0;
+  transition-delay: 0.24s;
+}
+
+.todo__state:checked~.todo__icon .todo__circle {
+  animation-name: explode;
+}
+
+.mini-img {
+  height: 100%;
+}
+
+@keyframes fadeIn {
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/App.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\index.html">All files</a> / <a href="index.html">src</a> App.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'</span>
+<span class="cstat-no" title="statement not covered" >import React from 'react'</span>
+<span class="cstat-no" title="statement not covered" >import ProductMain from './Components/Product/ProductMain'</span>
+<span class="cstat-no" title="statement not covered" >import MenuHamburguer from './Components/MenuHamburguer/MenuHamburguer';</span>
+<span class="cstat-no" title="statement not covered" >import Home from './Components/Home';</span>
+<span class="cstat-no" title="statement not covered" >import MenuLogin from './Components/MenuHamburguer/MenuLogin';</span>
+<span class="cstat-no" title="statement not covered" >import MenuClose from './Components/MenuHamburguer/MenuClose';</span>
+import MenuCreateAccount from './Components/MenuHamburguer/MenuLogin';
+<span class="cstat-no" title="statement not covered" >import Signup from './Components/Signup/Signup';</span>
+<span class="cstat-no" title="statement not covered" >import Login from './Components/Login/Login';</span>
+<span class="cstat-no" title="statement not covered" >import MainByQuery from './Components/Main/MainByQuery/MainByQuery';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >import CarouselDesktop from './Components/Product/carousel/CarouselDesktop';</span>
+<span class="cstat-no" title="statement not covered" >import MapsBlock from './Components/Product/maps/MapsBlock';</span>
+<span class="cstat-no" title="statement not covered" >import Favorite from './Components/Favorite/Favorite';</span>
+<span class="cstat-no" title="statement not covered" >import ContextProduct from './Components/Context/ContextProduct'</span>
+<span class="cstat-no" title="statement not covered" >import NotFound from './Components/NotFound/NotFound'</span>
+<span class="cstat-no" title="statement not covered" >import Reservation from './Components/Reservation/Reservation';</span>
+function <span class="fstat-no" title="function not covered" >App() {</span>
+<span class="cstat-no" title="statement not covered" >  return (</span>
+&nbsp;
+    //      {/* &lt;Home/&gt;    */}
+    //   {/* &lt;MenuHamburguer/&gt;     */}
+    //     {/* &lt;MenuCreateAccount/&gt;    */}
+    //       {/* &lt;MenuLogin/&gt;    */}
+    //       {/* &lt;MenuClose/&gt;    */}
+    /*&lt;&gt;
+      &lt;ProductMain/&gt;
+       &lt;/&gt;*/
+    &lt;ContextProduct&gt;
+        &lt;BrowserRouter&gt;
+        &lt;Routes&gt;
+          &lt;Route path='/' element={&lt;Home /&gt;} /&gt;
+          &lt;Route path='/menulogin' element={&lt;MenuLogin /&gt;} /&gt;
+          &lt;Route path='/menuClose' element={&lt;MenuClose /&gt;} /&gt;
+          &lt;Route path='/menuCreateAccount' element={&lt;MenuCreateAccount /&gt;} /&gt;
+          &lt;Route path='/menuHamburguer' element={&lt;MenuHamburguer /&gt;} /&gt;
+          &lt;Route path='/singUp' element={&lt;Signup /&gt;} /&gt;
+          &lt;Route path='/login' element={&lt;Login /&gt;} /&gt;
+          &lt;Route path='/redirect' element={&lt;Navigate to='/' /&gt;} /&gt;
+          &lt;Route path='/productMain' element={&lt;ProductMain /&gt;} /&gt;
+          &lt;Route path='/carousel' element={&lt;CarouselDesktop /&gt;} /&gt;
+          &lt;Route path="/category/:id/:title" element={&lt;MainByQuery/&gt;}/&gt;
+          &lt;Route path='/product/:id/:name'element={&lt;ProductMain/&gt;}/&gt;
+          &lt;Route path='/product/:id/:name'element={&lt;Navigate to='/product/:id/:name'/&gt;}/&gt;
+          &lt;Route path='/productsByCity/:nameCity' element={&lt;MainByQuery/&gt;}/&gt;
+          &lt;Route path='/productsByCity/:nameCity' element={&lt;Navigate to={'/productsByCity/:nameCity'}/&gt;}/&gt;
+          &lt;Route path='/maps/:state/:city/:country' element={&lt;MapsBlock/&gt;}/&gt;
+          {/* &lt;Route path='/maps/:state/:city/:country' element={&lt;Navigate to={'/maps/:state/:city/:country'}/&gt;}/&gt; */}
+          &lt;Route path='/favorite' element={&lt;Favorite/&gt;}/&gt;
+          &lt;Route path='/product/:id/:name/reservation' element={&lt;Reservation/&gt;}/&gt;
+          &lt;Route path='*' element={&lt;NotFound/&gt;}/&gt;
+        &lt;/Routes&gt;
+      &lt;/BrowserRouter&gt;
+    &lt;/ContextProduct&gt;
+  );
+}
+&nbsp;
+export default App;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jun 22 2022 13:25:04 GMT-0300 (hora estándar de Argentina)
+</div>
+</div>
+<script src="..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+/*MyReservation*/
+.container-card-reservation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem 2rem 4rem;
+    gap: 2rem;
+}
+
+/*cardreservation*/
+.content-reservation {
+    padding:   1rem 1.5rem 0.4rem 0rem;
+}
+
+.card-reservation {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    display: flex;
+    gap: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0.25rem 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+.card-reservation .image-reservation,
+.content-reservation {
+    width: 50%;
+    height: auto;
+
+}
+
+/*left*/
+.imageR {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+/*right*/
+.pReservation-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.info-reservation,
+.content-reservation {
+    color: var(--main-text-color);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;}
+
+.ubi-Reservation,
+.info-reservation,
+.info-person-reservation {
+    margin: 1rem 0rem;
+}
+
+/*
+.info-r{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0rem;
+}*/
+
+.info-person-reservation,
+.info-reservation {
+    display: grid;
+    grid-template-columns: repeat(2, 50%)
+}
+
+.div-rating-myR {
+    width: 50%;
+    /* margin: 0.5rem 2rem 1rem 0rem;*/
+}
+
+.div-rating-myR .rating-number {
+    width: 15%;
+}
+
+/*buttons*/
+.buttons-reservation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.buttons-reservation .see-product,
+.buttons-reservation .delete-reservation {
+    width: 50%;
+
+    padding: 1rem 0;
+    font-weight: 600;
+    color: var(--main-bg-color);
+
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+.buttons-reservation .see-product {
+    background-color: var(--secondary-color);
+}
+
+.buttons-reservation .delete-reservation {
+    background-color: rgb(201, 14, 14);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1500px) {
+
+    .card-reservation .image-reservation{
+        height: auto;
+}
+    .pReservation-name{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .div-rating-myR> .container-rating-jsx{
+        justify-content: space-between;
+    }
+    .div-rating-myR> .container-rating-jsx> .rating{
+flex-direction: row;
+    }
+    .div-rating-myR {
+        width: 100%;
+}
+
+        .content-reservation{
+            font-size: 14px;
+            
+                padding: 10px 0px;
+             
+                margin-right: 11px;
+        }
+        .div-rating-myR .rating-number {
+            width: 10%;
+        }
+
+}
+
+
+@media screen and (max-width: 1153px) {
+   .div-rating-myR{
+    width: 100%;
+
+    }
+    .buttons-reservation{
+        flex-wrap: wrap;
+
+    }
+
+    .buttons-reservation .see-product, .buttons-reservation .delete-reservation {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .container-card-reservation {
+        grid-template-columns: repeat(1, 1fr);
+        height: 100%;
+    }
+
+    .image-reservation,
+    .content-reservation  .card-reservation .image-reservation{
+        width: 100% !important;
+
+    }
+   
+   
+    .buttons-reservation .see-product, .buttons-reservation .delete-reservation{
+        padding: 16px;
+    }
+    .card-reservation .image-reservation, .content-reservation {
+        width: 50% !important;
+
+
+}    
+}
+@media screen and (max-width: 470px) {
+    .card-reservation {
+        flex-direction: column;
+    
+    }
+
+    .image-reservation,
+    .content-reservation  .card-reservation .image-reservation{
+        width: 100% !important;
+
+    }
+    .card-reservation .image-reservation, .content-reservation {
+        width: 100% !important;
+    }
+
+    .content-reservation {
+        padding:1rem 0.5rem;
+    }
+}

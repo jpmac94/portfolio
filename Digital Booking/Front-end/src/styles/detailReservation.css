@@ -1,0 +1,136 @@
+.container-detail-reservation {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 4px rgba(0,0,0,.25);
+    width: 100%;
+    height:calc(100% - 65px);
+    border-radius: 8px;
+    background-color: var(--basic-color);
+    margin-top: 45px;
+}
+.container-detail-reservation h2{
+    padding: 10px 20px 0px ;
+}
+.container-reservation-body{
+    width: 100%;
+    height: 100%;
+}
+.texts{
+    line-height: 30px;
+}
+.texts>.name-product{
+color: var(--main-text-color);
+font-weight: bold;
+font-size: 1.8rem;
+padding: 5px 0px;
+}
+
+.container-rating-reservation > .container-rating-jsx{
+    display: block ;
+}
+.container-rating-reservation > .container-rating-jsx>.rating>p{
+    display:none
+}
+.container-rating-reservation > .container-rating-jsx>.rating-number{
+    display: none;
+
+}
+
+.container-img{
+    height: 470px;
+}
+.image-reservation{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 20px 20px;
+    width: 100%;
+    height: 50%
+}
+.ubication-reservation{
+    display: flex;
+}
+.container-check-in-check-out{
+    display: flex;
+    justify-content: space-between;
+    border-top:  2px solid rgba(100, 96, 96, 0.351);
+    padding: 20px 0;   
+}
+.out{
+    border-bottom:  2px solid rgba(100, 96, 96, 0.351);
+}
+   
+.button-reservation {
+   
+    font-size: 1rem;
+    font-weight: 600;
+
+    align-items: center;
+    padding: 0.8rem 3.1rem;
+    margin-bottom: 1rem;
+    
+    border: none;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--secondary-color);
+    color: var(--basic-color);
+
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .container-reservation{
+        flex-direction: column;
+    }
+    .container-right{
+        width: 100%;
+    }
+    .container-reservation-body{
+        display: flex;
+        padding: 8px;
+    }
+    .container-img{
+        height: auto;
+    }
+   .image-reservation{
+    border-radius: 5px;
+   }
+   .texts{
+    line-height: none;
+   }
+   .ubication-reservation{
+    font-size: 14px;
+   }
+   .container-checkAll{
+    margin:20px 0px;
+   }
+   .texts>.name-product{
+    font-size: 1.5rem;
+   }
+
+
+}
+@media screen and (max-width: 470px)   {
+    .container-reservation-body{
+        display: block;
+    }
+    .ubication-reservation{
+        margin-bottom: auto;
+        font-size: 12px;
+       }
+       
+       .texts>.name-product{
+        font-size: 1.5rem;
+       }
+}

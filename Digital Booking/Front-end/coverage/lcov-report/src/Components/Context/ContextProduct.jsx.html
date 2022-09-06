@@ -1,0 +1,1926 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/Components/Context/ContextProduct.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">src/Components/Context</a> ContextProduct.jsx
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React,{createContext, useEffect, useState} from 'react';
+import Swal from 'sweetalert2'
+&nbsp;
+export const ContextProduct=createContext()
+&nbsp;
+const ProviderProduct=<span class="fstat-no" title="function not covered" >({</span>children})=&gt;{
+    const [productItem,setProductItem]=<span class="cstat-no" title="statement not covered" >useState(<span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        try{</span>
+            const productsInLocalStorage=<span class="cstat-no" title="statement not covered" >localStorage.getItem('productFa')</span>
+<span class="cstat-no" title="statement not covered" >            return productsInLocalStorage?JSON.parse(productsInLocalStorage):[]</span>
+        }catch(error){
+<span class="cstat-no" title="statement not covered" >            return []</span>
+        }
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        localStorage.setItem('productFa',JSON.stringify(productItem))</span>
+        // console.log(productItem);
+    },[productItem]
+    )
+&nbsp;
+    const addProductToFavorite =<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(p</span>roduct)=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        return setProductItem([...productItem,product]);</span>
+    }
+&nbsp;
+    const deleteProductToFavorite =<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(p</span>roduct)=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        return setProductItem(</span>
+            productItem.filter(<span class="fstat-no" title="function not covered" >pr</span>oductInFavorite=&gt;<span class="cstat-no" title="statement not covered" >productInFavorite.id!==product.id)</span>
+        )
+         
+    }
+ //---------------------city y dates en blockSerch-----
+ const [cityBlockSerch,setCityBlockSerch]=<span class="cstat-no" title="statement not covered" >useState('')</span>
+ const [datesBlockSerch,setDatesBlockSerch]=<span class="cstat-no" title="statement not covered" >useState('')</span>
+ //-----------------------------------------------------
+&nbsp;
+    //-----------llamados a los endpoints específicos----
+    const [stateFilters,setStateilters]=<span class="cstat-no" title="statement not covered" >useState([{id:''},{nameCity:''},{startDate:'',endDate:''}])</span>
+    const [filtroOut,setFiltroOut]=<span class="cstat-no" title="statement not covered" >useState(null)</span>
+    const [errorCat,setErrorCat]=<span class="cstat-no" title="statement not covered" >useState(false)</span>
+    const [errorCity,setErrorCity]=<span class="cstat-no" title="statement not covered" >useState(false)</span>
+    const [errorDates,setErrorDates]=<span class="cstat-no" title="statement not covered" >useState(false)</span>
+    const [addBool,setAddBool]=<span class="cstat-no" title="statement not covered" >useState(null)</span>
+    const sumaFiltrer=<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(s</span>umF)=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        console.log("Entró a la suma");</span>
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(sumF)[0]==='id'&amp;&amp;stateFilters[1]===''&amp;&amp;stateFilters[2]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if suma");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=sumF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[sumF,{nameCity:''},{startDate:'',endDate:''}]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(sumF)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(true)</span>
+            
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(sumF)[0]==='id'&amp;&amp;stateFilters[1]!==''&amp;&amp;stateFilters[2]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if suma");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=sumF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[sumF,stateFilters[1],{startDate:'',endDate:''}]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(sumF)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(true)</span>
+            
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(sumF)[0]==='id'&amp;&amp;stateFilters[1]===''&amp;&amp;stateFilters[2]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if suma");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=sumF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[sumF,{nameCity:''},stateFilters[2]]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(sumF)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(true)</span>
+            
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(sumF)[0]==='id'&amp;&amp;stateFilters[1]!==''&amp;&amp;stateFilters[2]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if suma");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=sumF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[sumF,stateFilters[1],stateFilters[2]]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(sumF)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(true)</span>
+            
+        }
+        
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(sumF)[0]==='nameCity'&amp;&amp;stateFilters[0]===''&amp;&amp;stateFilters[2]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if suma nameCity");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=sumF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[{id:''},sumF,{startDate:'',endDate:''}]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(sumF)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(true)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(sumF)[0]==='nameCity'&amp;&amp;stateFilters[0]!==''&amp;&amp;stateFilters[2]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if suma nameCity");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=sumF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[stateFilters[0],sumF,{startDate:'',endDate:''}]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(sumF)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(true)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(sumF)[0]==='nameCity'&amp;&amp;stateFilters[0]===''&amp;&amp;stateFilters[2]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if suma nameCity");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=sumF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[{id:''},sumF,stateFilters[2]]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(sumF)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(true)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(sumF)[0]==='nameCity'&amp;&amp;stateFilters[0]!==''&amp;&amp;stateFilters[2]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if suma nameCity");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=sumF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[stateFilters[0],sumF,stateFilters[2]]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(sumF)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(true)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(sumF)[0]==='startDate'&amp;&amp;Object.keys(sumF)[1]==='endDate'&amp;&amp;stateFilters[0]===''&amp;&amp;stateFilters[1]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if suma");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=sumF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[{id:''},{nameCity:''},sumF]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(sumF)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(true)</span>
+        }
+        
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(sumF)[0]==='startDate'&amp;&amp;Object.keys(sumF)[1]==='endDate'&amp;&amp;stateFilters[0]!==''&amp;&amp;stateFilters[1]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if suma");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=sumF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[stateFilters[0],{nameCity:''},sumF]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(sumF)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(true)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(sumF)[0]==='startDate'&amp;&amp;Object.keys(sumF)[1]==='endDate'&amp;&amp;stateFilters[0]===''&amp;&amp;stateFilters[1]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if suma");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=sumF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[{id:''},stateFilters[1],sumF]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(sumF)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(true)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(sumF)[0]==='startDate'&amp;&amp;Object.keys(sumF)[1]==='endDate'&amp;&amp;stateFilters[0]!==''&amp;&amp;stateFilters[1]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if suma");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=sumF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[stateFilters[0],stateFilters[1],sumF]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(sumF)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(true)</span>
+        }
+        
+        
+    }
+    const restaFiltrer=<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(r</span>estaF)=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        console.log("Entró a la resta");</span>
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(restaF)[0]==='id'&amp;&amp;stateFilters[1]===''&amp;&amp;stateFilters[2]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if resta");</span>
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[restaF,{nameCity:''},{startDate:'',endDate:''}]</span>
+            
+<span class="cstat-no" title="statement not covered" >            setAddBool(false)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+            
+<span class="cstat-no" title="statement not covered" >            console.log(addBool);</span>
+            
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(restaF)[0]==='id'&amp;&amp;stateFilters[1]!==''&amp;&amp;stateFilters[2]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if resta");</span>
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[restaF,stateFilters[1],{startDate:'',endDate:''}]</span>
+            
+<span class="cstat-no" title="statement not covered" >            setAddBool(false)</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(stateFilters[1])</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+            
+<span class="cstat-no" title="statement not covered" >            console.log(addBool);</span>
+            
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(restaF)[0]==='id'&amp;&amp;stateFilters[1]===''&amp;&amp;stateFilters[2]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if resta");</span>
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[restaF,{nameCity:''},stateFilters[2]]</span>
+            
+<span class="cstat-no" title="statement not covered" >            setAddBool(false)</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(stateFilters[2])</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+            
+<span class="cstat-no" title="statement not covered" >            console.log(addBool);</span>
+            
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(restaF)[0]==='id'&amp;&amp;stateFilters[1]!==''&amp;&amp;stateFilters[2]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if resta");</span>
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[restaF,stateFilters[1],stateFilters[2]]</span>
+            
+<span class="cstat-no" title="statement not covered" >            setAddBool(false)</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+            
+<span class="cstat-no" title="statement not covered" >            console.log(addBool);</span>
+            
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(restaF)[0]==='nameCity'&amp;&amp;stateFilters[0]===''&amp;&amp;stateFilters[2]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if resta");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=restaF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[{id:''},restaF,{startDate:'',endDate:''}]</span>
+            
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(false)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(restaF)[0]==='nameCity'&amp;&amp;stateFilters[0]!==''&amp;&amp;stateFilters[2]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if resta");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=restaF])
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(stateFilters[0])</span>
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[stateFilters[0],restaF,{startDate:'',endDate:''}]</span>
+            
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(false)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(restaF)[0]==='nameCity'&amp;&amp;stateFilters[0]===''&amp;&amp;stateFilters[2]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if resta");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=restaF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[{id:''},restaF,stateFilters[2]]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(stateFilters[2])</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(false)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(restaF)[0]==='nameCity'&amp;&amp;stateFilters[0]!==''&amp;&amp;stateFilters[2]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if resta");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=restaF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[stateFilters[0],restaF,stateFilters[2]]</span>
+            
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(false)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(restaF)[0]==='startDate'&amp;&amp;Object.keys(restaF)[1]==='endDate'&amp;&amp;stateFilters[0]===''&amp;&amp;stateFilters[1]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if resta");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=restaF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[{id:''},{nameCity:''},restaF]</span>
+            
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(false)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(restaF)[0]==='startDate'&amp;&amp;Object.keys(restaF)[1]==='endDate'&amp;&amp;stateFilters[0]!==''&amp;&amp;stateFilters[1]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if resta");</span>
+            // setStateilters([...stateFilters,stateFilters[0]=restaF])
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[stateFilters[0],{nameCity:''},restaF]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(stateFilters[0])</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(false)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(restaF)[0]==='startDate'&amp;&amp;Object.keys(restaF)[1]==='endDate'&amp;&amp;stateFilters[0]===''&amp;&amp;stateFilters[1]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if resta");</span>
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[{id:''},stateFilters[1],restaF]</span>
+<span class="cstat-no" title="statement not covered" >            setFiltroOut(stateFilters[1])</span>
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(false)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.keys(restaF)[0]==='startDate'&amp;&amp;Object.keys(restaF)[1]==='endDate'&amp;&amp;stateFilters[0]!==''&amp;&amp;stateFilters[1]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Entró a la al if resta");</span>
+            const nuevoA=<span class="cstat-no" title="statement not covered" >[stateFilters[0],stateFilters[1],restaF]</span>
+            
+<span class="cstat-no" title="statement not covered" >            setStateilters([...nuevoA])</span>
+<span class="cstat-no" title="statement not covered" >            setAddBool(false)</span>
+        }
+        
+    }
+<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
+        // console.log(stateFilters);
+<span class="cstat-no" title="statement not covered" >        llamadosApi()</span>
+    },[stateFilters])
+    //----------------------fin--------------------------
+    //-----------------FILTER----------------
+    
+    const [filterP,setFilterP]=<span class="cstat-no" title="statement not covered" >useState(<span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        try{</span>
+            const filtersInLocalStorage=<span class="cstat-no" title="statement not covered" >localStorage.getItem('filtersP2')</span>
+<span class="cstat-no" title="statement not covered" >            return filtersInLocalStorage?JSON.parse(filtersInLocalStorage):[]</span>
+        }catch(error){
+<span class="cstat-no" title="statement not covered" >            return []</span>
+        }
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        localStorage.setItem('filtersP2',JSON.stringify(filterP))</span>
+        // console.log(filter);
+    },[filterP]
+    )
+    
+&nbsp;
+    // console.log(allProductsContext);
+    // console.log(filterP);
+&nbsp;
+&nbsp;
+    //------------------llamados a los métodos de la api--------------------
+    const fetchCompleto=<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
+        let requestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+            method: "GET"
+          };
+    
+<span class="cstat-no" title="statement not covered" >          fetch("http://localhost:8080/api/product/findAll", requestOptions)</span>
+            .then(<span class="fstat-no" title="function not covered" >(r</span>esponse) =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
+            .then(<span class="fstat-no" title="function not covered" >(r</span>esult) =&gt; {
+                //  console.log(result);
+<span class="cstat-no" title="statement not covered" >                 setFilterP([...result])</span>
+                
+            })
+            .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; <span class="cstat-no" title="statement not covered" >console.log("error", error))</span>;
+    }
+    const llamadosApi=<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        console.log(Object.values(stateFilters[0])[0])</span>
+<span class="cstat-no" title="statement not covered" >        if(Object.values(stateFilters[0])[0]!==''&amp;&amp;Object.values(stateFilters[1])[0]===''&amp;&amp;Object.values(stateFilters[2])[0]===''){</span>
+            
+<span class="cstat-no" title="statement not covered" >            console.log("buscar por id");</span>
+            
+            let requestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+                method: 'GET',
+                redirect: 'follow'
+              };
+              
+<span class="cstat-no" title="statement not covered" >              fetch("http://localhost:8080/api/product/findProductByIdCategory/"+Object.values(stateFilters[0])[0], requestOptions)</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sult =&gt; {
+                    
+<span class="cstat-no" title="statement not covered" >                    if(Object.values(result)[1]==="No products have been found for the indicated id category."){</span>
+                      
+<span class="cstat-no" title="statement not covered" >                        console.log("entro al if de 400");</span>
+<span class="cstat-no" title="statement not covered" >                        console.log(Object.values(result)[1]==="No products have been found for the indicated id category.")</span>
+<span class="cstat-no" title="statement not covered" >                        setErrorCat(true)</span>
+<span class="cstat-no" title="statement not covered" >                        restaFiltrer({id:''})</span>
+<span class="cstat-no" title="statement not covered" >                        Swal.fire({</span>
+                          icon: 'error',
+                          title: 'Oops...',
+                          text: 'There is no result for your search. Please try another.!'
+                        })
+                      }else{
+<span class="cstat-no" title="statement not covered" >                          setFilterP([...result])</span>
+                      }
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; <span class="cstat-no" title="statement not covered" >console.log('error', error))</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.values(stateFilters[0])[0]===''&amp;&amp;Object.values(stateFilters[1])[0]!==''&amp;&amp;Object.values(stateFilters[2])[0]===''){</span>
+            
+<span class="cstat-no" title="statement not covered" >            console.log("buscar por ciudad");</span>
+            let requestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+                method: 'GET',
+                redirect: 'follow'
+              };
+              
+<span class="cstat-no" title="statement not covered" >              fetch("http://localhost:8080/api/product/findByCity/"+Object.values(stateFilters[1])[0], requestOptions)</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sult =&gt; {
+                    
+<span class="cstat-no" title="statement not covered" >                    if(Object.values(result)[1]==="No products have been found for the indicated city."){</span>
+                    // console.log(Object.keys(stateFilters[1])[0]);
+                    // console.log(Object.keys(filtroOut)[0]);
+                    //   console.log(Object.keys(filtroOut)[0]===Object.keys(stateFilters[1])[0]);
+<span class="cstat-no" title="statement not covered" >                      console.log("entro al if de 400");</span>
+<span class="cstat-no" title="statement not covered" >                      console.log(Object.values(result)[1]==="No products have been found for the indicated city.")</span>
+<span class="cstat-no" title="statement not covered" >                      setErrorCity(true)</span>
+<span class="cstat-no" title="statement not covered" >                      restaFiltrer({nameCity:''})</span>
+<span class="cstat-no" title="statement not covered" >                      Swal.fire({</span>
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'There is no result for your search. Please try another.!'
+                      })
+                      
+                    }else{
+<span class="cstat-no" title="statement not covered" >                        setFilterP([...result])</span>
+                    }
+                    
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; <span class="cstat-no" title="statement not covered" >console.log('Entró al error error', error))</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.values(stateFilters[0])[0]===''&amp;&amp;Object.values(stateFilters[1])[0]===''&amp;&amp;Object.values(stateFilters[2])[0]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("buscar por fechas");</span>
+<span class="cstat-no" title="statement not covered" >            console.log(Object.values(stateFilters[2]));</span>
+<span class="cstat-no" title="statement not covered" >            console.log(Object.values(stateFilters[2])[1]);</span>
+            let requestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+                method: 'GET',
+                redirect: 'follow'
+              };
+              
+<span class="cstat-no" title="statement not covered" >              fetch("http://localhost:8080/api/product/findProductByDate/"+Object.values(stateFilters[2])[0]+"/"+Object.values(stateFilters[2])[1], requestOptions)</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sult =&gt; {
+<span class="cstat-no" title="statement not covered" >                    console.log(result)</span>
+<span class="cstat-no" title="statement not covered" >                    console.log(Object.values(result)[1])</span>
+<span class="cstat-no" title="statement not covered" >                    if(Object.values(result)[1]==="No products have been found for the indicated dates."){</span>
+                        
+<span class="cstat-no" title="statement not covered" >                        setErrorDates(true)</span>
+<span class="cstat-no" title="statement not covered" >                        restaFiltrer({startDate:'',endDate:''})</span>
+<span class="cstat-no" title="statement not covered" >                        console.log("entro al if de 400");</span>
+<span class="cstat-no" title="statement not covered" >                        Swal.fire({</span>
+                          icon: 'error',
+                          title: 'Oops...',
+                          text: 'There is no result for your search. Please try another.!'
+                        })
+                      }else{
+<span class="cstat-no" title="statement not covered" >                          setFilterP([...result])</span>
+                      }
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; <span class="cstat-no" title="statement not covered" >console.log('error', error))</span>;
+            
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.values(stateFilters[0])[0]!==''&amp;&amp;Object.values(stateFilters[1])[0]!==''&amp;&amp;Object.values(stateFilters[2])[0]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("buscar por id y ciudad");</span>
+&nbsp;
+            let requestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+                method: 'GET',
+                redirect: 'follow'
+              };
+              
+<span class="cstat-no" title="statement not covered" >              fetch("http://localhost:8080/api/product/findProductByIdCategoryAndCity?idCategory="+Object.values(stateFilters[0])[0]+"&amp;nameCity="+Object.values(stateFilters[1])[0], requestOptions)</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sult =&gt; {
+<span class="cstat-no" title="statement not covered" >                    console.log(Object.values(result)[1])</span>
+<span class="cstat-no" title="statement not covered" >                    console.log(Object.keys(filtroOut)[0]==="nameCity");</span>
+<span class="cstat-no" title="statement not covered" >                    if(Object.values(result)[1]==="No products have been found for the indicated idCategory y nameCity."){</span>
+                        // console.log(Object.keys(stateFilters[1])[0]);
+                        // console.log(Object.keys(filtroOut)[0]);
+                        //   console.log(Object.keys(filtroOut)[0]===Object.keys(stateFilters[1])[0]);
+<span class="cstat-no" title="statement not covered" >                          console.log("entro al if de 400");</span>
+<span class="cstat-no" title="statement not covered" >                          console.log(Object.values(result)[1]==="No products have been found for the indicated idCategory or nameCity..")</span>
+<span class="cstat-no" title="statement not covered" >                          if(Object.keys(filtroOut)[0]==="id"){</span>
+<span class="cstat-no" title="statement not covered" >                            restaFiltrer({id:''})</span>
+<span class="cstat-no" title="statement not covered" >                            setErrorCat(true)</span>
+                            }
+<span class="cstat-no" title="statement not covered" >                          if(Object.keys(filtroOut)[0]==="nameCity"){</span>
+<span class="cstat-no" title="statement not covered" >                            restaFiltrer({nameCity:''})</span>
+<span class="cstat-no" title="statement not covered" >                            setErrorCity(true)</span>
+                            }
+<span class="cstat-no" title="statement not covered" >                          Swal.fire({</span>
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'There is no result for your search. Please try another.!'
+                          })
+                          
+                        }else{
+<span class="cstat-no" title="statement not covered" >                          setFilterP([...result])</span>
+                      }
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; <span class="cstat-no" title="statement not covered" >console.log('error', error))</span>;
+        }
+        
+<span class="cstat-no" title="statement not covered" >        if(Object.values(stateFilters[0])[0]!==''&amp;&amp;Object.values(stateFilters[1])[0]===''&amp;&amp;Object.values(stateFilters[2])[0]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("buscar por id y fechas");</span>
+            let requestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+                method: 'GET',
+                redirect: 'follow'
+              };
+              
+<span class="cstat-no" title="statement not covered" >              fetch("http://localhost:8080/api/product/findProductByIdCategoryAndDates?idCategory="+Object.values(stateFilters[0])[0]+"&amp;startDate="+Object.values(stateFilters[2])[0]+"&amp;endDate="+Object.values(stateFilters[2])[1], requestOptions)</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sult =&gt; {
+                    //  console.log(Object.values(result)[1])
+<span class="cstat-no" title="statement not covered" >                    if(Object.values(result)[1]==="No products have been found for the indicated idCategory and dates."){</span>
+                        // console.log(Object.keys(stateFilters[1])[0]);
+                        // console.log(Object.keys(filtroOut)[0]);
+                        //   console.log(Object.keys(filtroOut)[0]===Object.keys(stateFilters[1])[0]);
+<span class="cstat-no" title="statement not covered" >                          console.log("entro al if de 400");</span>
+<span class="cstat-no" title="statement not covered" >                          console.log(Object.values(result)[1]==="No products have been found for the indicated idCategory or nameCity..")</span>
+<span class="cstat-no" title="statement not covered" >                          if(Object.keys(filtroOut)[0]==="id"){</span>
+<span class="cstat-no" title="statement not covered" >                            restaFiltrer({id:''})</span>
+<span class="cstat-no" title="statement not covered" >                            setErrorCat(true)</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                          if(Object.keys(filtroOut)[0][0]==="startDate"){</span>
+<span class="cstat-no" title="statement not covered" >                            restaFiltrer({startDate:'',endDate:''})</span>
+<span class="cstat-no" title="statement not covered" >                            setErrorDates(true)</span>
+                        }
+                        
+                          
+<span class="cstat-no" title="statement not covered" >                          Swal.fire({</span>
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'There is no result for your search. Please try another.!'
+                          })
+                          
+                        }else{
+<span class="cstat-no" title="statement not covered" >                          setFilterP([...result])</span>
+                      }
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; <span class="cstat-no" title="statement not covered" >console.log('error', error))</span>;
+            
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.values(stateFilters[0])[0]===''&amp;&amp;Object.values(stateFilters[1])[0]!==''&amp;&amp;Object.values(stateFilters[2])[0]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("buscar por ciudad y fechas");</span>
+            // console.log(Object.values(stateFilters[1])[0]);
+            // console.log(Object.values(stateFilters[2])[0]);
+            // console.log(Object.values(stateFilters[2])[1]);
+            let requestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+                method: 'GET',
+                redirect: 'follow'
+              };
+              
+<span class="cstat-no" title="statement not covered" >              fetch("http://localhost:8080/api/product/findProductByNameCityAndDate?nameCity="+Object.values(stateFilters[1])[0]+"&amp;startDate="+Object.values(stateFilters[2])[0]+"&amp;endDate="+Object.values(stateFilters[2])[1], requestOptions)</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sult =&gt; {
+<span class="cstat-no" title="statement not covered" >                    console.log(result)</span>
+<span class="cstat-no" title="statement not covered" >                    console.log(result.status);</span>
+<span class="cstat-no" title="statement not covered" >                    if(Object.values(result)[1]==="No products have been found for the indicated nameCity and dates."){</span>
+                        
+<span class="cstat-no" title="statement not covered" >                          if(Object.keys(filtroOut)[0]==="nameCity"){</span>
+<span class="cstat-no" title="statement not covered" >                            restaFiltrer({nameCity:''})</span>
+<span class="cstat-no" title="statement not covered" >                            setErrorCity(true)</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        if(Object.keys(filtroOut)[0][0]==="startDate"){</span>
+<span class="cstat-no" title="statement not covered" >                            restaFiltrer({startDate:'',endDate:''})</span>
+<span class="cstat-no" title="statement not covered" >                            setErrorDates(true)</span>
+                        }
+                        
+                        
+<span class="cstat-no" title="statement not covered" >                        console.log("entro al if de 400");</span>
+<span class="cstat-no" title="statement not covered" >                        Swal.fire({</span>
+                          icon: 'error',
+                          title: 'Oops...',
+                          text: 'There is no result for your search. Please try another.!'
+                        })
+                      }else{
+<span class="cstat-no" title="statement not covered" >                          setFilterP([...result])</span>
+                      }
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; <span class="cstat-no" title="statement not covered" >console.log('error', error))</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.values(stateFilters[0])[0]!==''&amp;&amp;Object.values(stateFilters[1])[0]!==''&amp;&amp;Object.values(stateFilters[2])[0]!==''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("buscar por id y ciudad y fechas");</span>
+            let requestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+                method: 'GET',
+                redirect: 'follow'
+              };
+              
+<span class="cstat-no" title="statement not covered" >              fetch("http://localhost:8080/api/product/findProductByIdCategoryAndNameCityAndDates?idCategory="+1+"&amp;nameCity="+Object.values(stateFilters[1])[0]+"&amp;startDate="+Object.values(stateFilters[2])[0]+"&amp;endDate="+Object.values(stateFilters[2])[1], requestOptions)</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sult =&gt; {
+<span class="cstat-no" title="statement not covered" >                    console.log(result)</span>
+<span class="cstat-no" title="statement not covered" >                    if(Object.values(result)[1]==="No products have been found for the indicated idCategory, nameCity and dates."){</span>
+<span class="cstat-no" title="statement not covered" >                        if(Object.keys(filtroOut)[0]==="id"){</span>
+<span class="cstat-no" title="statement not covered" >                            restaFiltrer({id:''})</span>
+<span class="cstat-no" title="statement not covered" >                            setErrorCat(true)</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        if(Object.keys(filtroOut)[0]==="nameCity"){</span>
+<span class="cstat-no" title="statement not covered" >                            restaFiltrer({nameCity:''})</span>
+<span class="cstat-no" title="statement not covered" >                            setErrorCity(true)</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        if(Object.keys(filtroOut)[0][0]==="startDate"){</span>
+<span class="cstat-no" title="statement not covered" >                            restaFiltrer({startDate:'',endDate:''})</span>
+<span class="cstat-no" title="statement not covered" >                            setErrorDates(true)</span>
+                        }
+                        
+<span class="cstat-no" title="statement not covered" >                        console.log("entro al if de 400");</span>
+<span class="cstat-no" title="statement not covered" >                        Swal.fire({</span>
+                          icon: 'error',
+                          title: 'Oops...',
+                          text: 'There is no result for your search. Please try another.!'
+                        })
+                      }else{
+<span class="cstat-no" title="statement not covered" >                          setFilterP([...result])</span>
+                      }
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; <span class="cstat-no" title="statement not covered" >console.log('error', error))</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        if(Object.values(stateFilters[0])[0]===''&amp;&amp;Object.values(stateFilters[1])[0]===''&amp;&amp;Object.values(stateFilters[2])[0]===''){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("Mostrar todos");</span>
+<span class="cstat-no" title="statement not covered" >            fetchCompleto();</span>
+        }
+    }
+    //------------------------------------------------------------------
+    const addDataAllProducts=<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        fetchCompleto();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >()</span>=&gt;<span class="cstat-no" title="statement not covered" >addDataAllProducts(),</span>[])</span>
+    
+    //---------------------------------------------
+&nbsp;
+    //------------productos con reservas--------
+&nbsp;
+    const [idProductReservation,setIdProductReservation]=<span class="cstat-no" title="statement not covered" >useState('')</span>
+    const[productReservation,setProductReservation]=<span class="cstat-no" title="statement not covered" >useState('')</span>
+<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
+        const fReservationByIdProduct=<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
+            let requestOptions = <span class="cstat-no" title="statement not covered" >{</span>
+                method: 'GET',
+                redirect: 'follow'
+              };
+              
+<span class="cstat-no" title="statement not covered" >              idProductReservation!==''&amp;&amp;fetch("localhost:8080/api/reservation/findReservationByIdProduct?idProduct="+idProductReservation, requestOptions)</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; <span class="cstat-no" title="statement not covered" >response.text())</span>
+                .then(<span class="fstat-no" title="function not covered" >re</span>sult =&gt; {
+<span class="cstat-no" title="statement not covered" >                    setProductReservation(result)</span>
+<span class="cstat-no" title="statement not covered" >                    console.log(result)</span>
+                })
+                .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; <span class="cstat-no" title="statement not covered" >console.log('error', error))</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        fReservationByIdProduct();</span>
+    },[idProductReservation])
+    //------------------------------------------
+    //----------------booleano para manejar alerta en login-----
+    const [boolReservation,setBoolReservation]=<span class="cstat-no" title="statement not covered" >useState('')</span>
+    //----------------------------------------------------
+&nbsp;
+    
+<span class="cstat-no" title="statement not covered" >        return(</span>
+            &lt;ContextProduct.Provider
+             value=
+                {{
+                    addProductToFavorite,
+                    deleteProductToFavorite,
+&nbsp;
+                    productItem,
+                    filterP,
+                    sumaFiltrer,
+                    restaFiltrer,
+                    stateFilters,
+                    errorCat,
+                    errorCity,
+                    errorDates,
+&nbsp;
+                    setCityBlockSerch,
+                    cityBlockSerch,
+                    datesBlockSerch,
+                    setDatesBlockSerch,
+&nbsp;
+                    setIdProductReservation,
+                    productReservation,
+                    
+                    boolReservation,
+                    setBoolReservation
+                }}
+                &gt;
+                {children}
+            &lt;/ContextProduct.Provider&gt;
+        )
+    
+};
+export default ProviderProduct;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jun 22 2022 13:25:04 GMT-0300 (hora estándar de Argentina)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

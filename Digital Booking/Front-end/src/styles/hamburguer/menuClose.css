@@ -1,0 +1,66 @@
+.headerMenu>.blockUser {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-weight: 700;
+    color: var(--main-text-color);
+    text-align: end;
+}
+
+.headerMenu>.blockUser>.lettersName {
+    align-self: flex-end;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: var(--basic-color);
+    color: var(--secondary-text-color);
+}
+
+.headerMenu>.blockUser>div {
+    color: var(--basic-color);
+    margin: 10px;
+}
+
+.headerMenu>.blockUser>div :last-child {
+    color: var(--main-text-color);
+}
+
+.logOutMenu {
+    text-align: end;
+    padding: 1rem;
+    color: var(--main-text-color);
+    width: 100%;
+    position: fixed;
+    bottom: 2.5rem;
+
+}
+
+.logOutMenu>p>label {
+    text-decoration: none;
+    color: var(--secondary-color);
+
+}
+
+.network-logos {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    color: var(--secondary-text-color);
+    margin: 10px 15px 20px 0px;
+
+    font-size: 1.25rem;
+    text-align: end;
+    letter-spacing: 15px;
+}
+
+/*pop up*/
+.swal2-container.swal2-center>.swal2-popup{
+    color: #87adbd;
+    background-color: var(--main-text-color);
+}/*#87adbd*/
+.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation{
+    background-color: rgba(84, 87, 118, 0.6);
+}
+.swal2-styled.swal2-confirm{
+    color: var(--main-text-color);
+    background-color: #87adbd;
+}

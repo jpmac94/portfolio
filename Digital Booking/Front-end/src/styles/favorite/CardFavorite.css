@@ -1,0 +1,145 @@
+.cardF {
+    display: flex;
+    box-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+    height: 100%;
+    /* flex: 1 1 400px; */
+    /* transform: translateX(400%);
+    transition: transform 0.4s ease; */
+}
+
+/* .cardF:nth-of-type(even){
+    transform: translateX(-400%);
+}
+.cardF.show{
+    transform: translateX(0);
+}*/
+
+.imageF {
+    width: 50%;
+    height: 100%;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.contentF {
+    padding: 1rem;
+    width: 60%;
+    height: 100%;
+}
+
+.container .buttonsF {
+    display: flex;
+    flex-direction: row;
+
+    /* justify-content: center;
+    align-items: center; */
+}
+
+/*
+.contentF .ubi, .contentF .description, .contentF .puntuacion{
+    margin: 0.5rem 0rem;
+}*/
+
+.buttonF {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0.7rem;
+    color: var(--basic-color);
+    font-weight: 700;
+    font-style: normal;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* box-shadow: inset 15px 15px 20px rgb(233, 225, 225),
+                inset -15px -15px 20px #000; */
+}
+
+/*.contentF .buttonsF{
+    display: flex;
+    margin: 1rem 0rem;
+}*/
+
+.buttonDetailF {
+    width: 40%;
+    margin-left: 10%;
+    background-color: var(--secondary-color);
+}
+
+.contentF .icons {
+    padding: 1rem 0rem;
+}
+
+.buttonF:focus {
+    animation: shadow 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: inset 5px 5px 10px rgb(233, 225, 225), inset -5px -5px 10px #000;
+    }
+
+    100% {
+        box-shadow: none;
+    }
+}
+
+.contentF .buttonDeleteF {
+    width: 40%;
+    margin-left: 12px;
+    padding: 0.7rem;
+    background-color: rgb(201, 14, 14);
+}
+
+/*
+@media screen and (max-width:1077px) {
+    .cardF{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .contentF, .imageF{
+        width: 100%;
+        height: 50%;
+    }
+}*/
+
+@media screen and (max-width: 1024px) {
+    .contentF {
+        font-size: 0.9rem;
+    }
+
+    .contentF .buttonDeleteF,
+    .buttonDetailF {
+        width: 100%;
+        margin-left: 0rem;
+        padding: 0.7rem;
+    }
+
+    .buttonsF {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .cardF {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .contentF,
+    .imageF {
+        width: 100%;
+        height: 50%;
+    }
+}

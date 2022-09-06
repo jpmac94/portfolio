@@ -1,0 +1,232 @@
+.container-form {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 7rem;
+}
+
+.form-register {
+  width: 450px;
+  margin: auto;
+}
+
+.form-register h4 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+
+  color: var(--secondary-color)
+}
+
+.labels {
+  color: var(--main-text-color);
+}
+
+.controls {
+  width: 99%;
+  background: var(--basic-color);
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.namelastname {
+  display: flex;
+  column-gap: 10%;
+}
+
+.form-register p {
+  text-align: center;
+  margin-top: 10px;
+  color: var(--main-text-color);
+}
+
+.form-register a {
+  color: var(--secondary-color);
+}
+
+.form-register a:hover {
+
+  text-decoration: underline;
+}
+
+.botons {
+  width: 70%;
+  background: var(--secondary-color);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  border: none;
+  padding: 12px;
+
+  font-weight: 700;
+  font-size: 22px;
+
+  text-align: center;
+  color: var(--basic-color);
+  margin-top: 8%;
+  margin-left: 14%;
+  cursor: pointer;
+}
+
+
+/* EYE PASSWORD */
+.input-password {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-password-lie {
+  display: flex;
+}
+
+.password {
+  font-size: 1.2rem;
+  padding-right: 10rem;
+}
+
+.btn {
+  padding-top: 1.8rem;
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: rgb(214, 208, 208);
+  margin-right: 0.8rem;
+  margin-left: -2.4rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border: none;
+  text-decoration: none;
+
+}
+
+/* VALIDATIONS */
+.controlsInvalid {
+  width: 100%;
+  background: var(--main-bg-color);
+  padding: 10px;
+  border-radius: 5px;
+  border-color: #FF0000;
+  font-size: 18px;
+  outline: none;
+
+}
+
+.incorect {
+
+  font-size: 12px;
+  background-color: transparent;
+  color: #FF0000 !important;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+}
+
+.controlsInvalidPassword {
+
+  padding: 10px 0rem;
+  font-size: 1.2rem;
+  padding-left: 10px;
+  padding-right: 11rem !important;
+  width: 99%;
+  background: #FFE1E1;
+  border-radius: 5px;
+  border-color: #FF0000;
+  outline: none;
+  font-size: 18px;
+}
+
+
+
+/* --------------RESPONSIVE----------------------- */
+
+@media (min-width:480px) and (max-width:768px) {
+  .form-register {
+    width: 50%;
+  }
+
+  .labels {
+
+    font-size: 14px;
+  }
+
+  .password {
+    width: 98.2%;
+    padding-right: 6rem;
+  }
+
+  .namelastname {
+    display: block;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+  }
+
+  .botons {
+    width: 97%;
+    margin-left: 5px;
+    margin-bottom: 3rem;
+  }
+
+  .controlsInvalid {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .controlsInvalidPassword {
+    border-radius: 5px;
+    border-color: #FF0000;
+
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+
+  }
+
+  .incorect {
+    font-size: 10px !important;
+    margin-bottom: 5px;
+  }
+
+  .container-form{
+    margin-top: 5rem;
+  }
+}
+
+@media (max-width:480px) {
+  .form-register {
+    width: 80%;
+
+  }
+
+  .labels {
+    font-size: 12px;
+  }
+
+  .namelastname {
+    display: block;
+  }
+
+  .controls {
+    font-size: 12px;
+  }
+
+  .botons {
+    width: 98%;
+    margin-top: 12px;
+    margin-left: 5px;
+    font-size: 18px;
+  }
+
+  .redirection {
+    font-size: 13px;
+  }
+  .container-form{
+    margin-top: 5rem;
+  }
+}

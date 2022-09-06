@@ -1,0 +1,187 @@
+.containerTwoBlocks {
+    display: flex;
+    margin: 0px 31px;
+    gap: 20px;
+
+}
+
+.containerTwoBlocks>.container-detail-reservation {
+    margin-bottom: 120px;
+}
+
+.container-card-reservationAdmi {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background-color: var(--basic-color);
+
+    margin-top: 4px;
+    padding: 1rem;
+}
+.container-text .button-create{
+    font-size: 1rem;
+    font-weight: 600;
+
+    align-items: center;
+    padding: 0.8rem 3.1rem;
+    margin: 2rem 0rem;
+    
+    border: none;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--secondary-color);
+    color: var(--basic-color);
+
+    cursor: pointer;
+}
+.containerOfAll {
+    background-color: var(--basic-color);
+    margin: 4px 30px 120px 0px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .25);
+    border-radius: 5px;
+    width: 65%;
+}
+
+.containerodProduct {
+    width: 35%;
+}
+
+.containerFormClass {
+    padding: 30px 40px;
+}
+
+.containerPolicity {
+    display: flex;
+    justify-content: space-between;
+
+    border: 1px solid rgba(95, 91, 92, 0.173);
+    border-radius: 5px;
+}
+
+.block-policy {
+
+    border-radius: 5px;
+    padding: 15px 20px;
+    width: 35%;
+}
+
+.h3Block {
+    padding-bottom: 10px;
+    color: var(--main-text-color);
+    font-size: 18px;
+}
+
+.h4Block {
+    padding-bottom: 10px;
+    color: var(--main-text-color);
+}
+
+.textareaBlock {
+    resize: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 2px 2px rgb(0 0 0 / 15%);
+    width: 100%;
+
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.h2Product {
+    margin: 30px 30px 0px;
+}
+
+.features-div-render p {
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: var(--main-text-color);
+}
+
+.features-div-render svg {
+    width: 4rem;
+    height: 4rem;
+    margin: 0.5rem;
+
+    fill: var(--secondary-text-color);
+
+}
+.features-div-render path{
+    stroke: var(--secondary-text-color);
+}
+
+.add-feature {
+    width: 30%;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    
+    color: var(--main-text-color);
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    border: 1px solid var(--secondary-color);
+
+
+}
+.add-feature:hover {
+    color: var(--basic-color);
+    background-color: var(--secondary-text-color);
+    transition: 0.6s;
+    border: 1px solid var(--secondary-text-color);
+}
+.groupC{
+    width: 100%;
+    padding: 15px 20px;
+
+}
+.container-city2{
+    width: 100;
+}
+@media screen and (max-width: 1120px) {
+
+    .h3Block {
+        font-size: 16px;
+    }
+
+    .h4Block {
+        font-size: 14px;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .containerTwoBlocks {
+        flex-direction: column;
+        margin-bottom: 60px;
+
+    }
+
+    .containerOfAll {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .containerodProduct {
+        width: 100%;
+
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .containerPolicity {
+        flex-direction: column;
+    }
+
+    .block-policy {
+        width: auto;
+    }
+}

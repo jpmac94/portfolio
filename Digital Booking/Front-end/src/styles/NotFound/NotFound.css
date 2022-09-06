@@ -1,0 +1,108 @@
+
+/* .containerNotFound{
+    display: flex;
+}
+h4.notFound{
+    text-align: center !important;
+    margin: 50%;
+    color: aqua;
+    font-size: 200px;
+    font-weight: bold;
+    text-shadow: red -2px 0, cyan 2px 0;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.scene{
+
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #151515; */
+    display: grid;
+    flex-wrap: wrap;
+    place-content: center;
+    height: 100vh;
+    width: auto;
+    padding: 5px;
+    color: #fff;
+
+
+    /* width: 230px;
+    height: 200px; */
+    background: url("https://github.com/JulioCodesSM/CodeSnippets/blob/main/ImageAnimationSequence_2.0/background.jpg?raw=true");
+    
+    background-size: cover;
+    border: 5px solid #191919;
+    position: relative;
+    overflow: hidden;
+    
+}
+.scene img {
+    position: absolute;
+}
+.scene h1 {
+    position: absolute;
+}
+
+.notfound{
+    top: 40vh;
+    left: 40vw;
+    width: 90px;
+
+}
+.astronaut {
+    top: 40px;
+    right: 10px;
+    width: 90px;
+    animation: astronaut-move 20s forwards;
+}
+.ship {
+    top: 60px;
+    left: 120px;
+    width: 100px;
+    transform: scale(0);
+    animation: ship-move 15s 3s forwards;
+}
+
+.comet {
+    top: 150px;
+    left: -250px;
+    width: 350px;
+    animation: comet-move 20s 5s forwards;
+}
+
+.moon {
+    bottom: -10vh;
+    right: -10vw;
+    width: 300px;
+}
+
+@keyframes astronaut-move {
+    to {
+        transform:
+            translate(-50px, 0px) rotate(-360deg);
+    }
+}
+
+@keyframes ship-move {
+    25% {
+        transform: scale(.5) translate(-70px, -25px);
+    }
+
+    50%,
+    100% {
+        transform: scale(4) translate(50px, 100px);
+    }
+}
+
+@keyframes stars-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes comet-move {
+    to {
+        transform:
+            translate(100px, -50px);
+        filter: hue-rotate(360deg);
+    }
+}

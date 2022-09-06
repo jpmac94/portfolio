@@ -1,0 +1,313 @@
+/*-------General styles-------*/
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+height: 75px;
+    padding: 8px 16px;
+
+    background-color: var(--basic-color);
+    box-shadow: 0px 2px 5px 1px rgb(0 0 0 / 25%);
+}
+.css-fe8zxj-Input{
+    margin: 1.2rem !important;
+}
+/*---Logo styles---*/
+.blockLogo {
+    display: flex;
+    align-items: center;
+}
+
+.logOutMenu a {
+    color: var(--secondary-color);
+}
+
+.blockLogo a {
+    text-decoration: none;
+}
+
+.blockLogo p {
+    font-style: italic;
+    /*text-decoration: none;*/
+    padding: 5px;
+    color: var(--secondary-text-color);
+}
+
+/*---Buttons login/logout---*/
+.button {
+    font-weight: 700;
+    width: 145px;
+    padding: 10px;
+    margin-left: 10px;
+
+    border-radius: 5px;
+    cursor: pointer;
+
+    color: var(--secondary-color);
+
+    background-color: var(--basic-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.button:hover {
+    color: var(--basic-color);
+    background-color: var(--secondary-color);
+    transition: 0.6s;
+}
+
+/*
+.button a{
+    color: 
+   
+}
+.button a:hover{
+    color: var(--basic-color);
+   
+}*/
+
+.div-containerButtons {
+    display: flex;
+}
+
+.hideButtons {
+    display: none;
+}
+
+/**/
+.button a {
+    /*color: var(--secondary-color);*/
+    text-decoration: none;
+}
+
+/*---User menu when logged in---*/
+.user-container {
+    display: flex;
+    flex-direction: row-reverse;
+    display: none;
+}
+
+.showUser {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+
+/*circle with initials*/
+.blockUser {
+    display: flex;
+    font-weight: 700;
+    color: var(--main-text-color);
+}
+
+.lettersName {
+    align-self: center;
+    background-color: var(--main-text-color);
+    border-radius: 50%;
+    padding: 10px;
+    color: var(--basic-color);
+}
+/* 
+.blockUser div{
+    width: 100%;
+} */
+.user-in{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.favorite {
+
+    align-self: center;
+}
+
+.hrH {
+    height: 3rem;
+    margin: 1rem 1rem 1rem 1rem;
+   /* margin-top: 20px;
+    margin-right: 20px;*/
+    font-size: 50px;
+    border-color: var(--secondary-color);
+}
+
+.myf {
+    text-decoration: none;
+    color: #18212a;
+    position: relative;
+}
+
+.myf:hover {
+    font-size: 16.5px;
+}
+
+
+
+.favorite>.myf:hover::before {
+    padding-bottom: 1px;
+    background: var(--main-text-color);
+   
+}
+.favorite>.myf:before {
+    content: '';
+    background-color: var(--main-text-color);
+    position: absolute;
+    bottom: -10px;
+    height: 2px;
+    width: 0%;
+    transition: ease .5s;
+}
+.favorite>.myf:hover::before {
+    width: 100%;
+    transition: ease-in .4s;
+}
+.heart-favorite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: red;
+    align-items: center;
+    margin: 3px;
+}
+
+.blockUser>div {
+    color: var(--secondary-text-color);
+    margin-left: 7px;
+}
+
+.blockUser>div :last-child {
+    color: var(--secondary-color);
+}
+
+.hamburguer {
+    display: none;
+}
+.close-user{
+margin-top: 5px;
+
+}
+.close-user>a{
+color:black
+}
+
+
+/* ------------Hamburger menu transitions------------ */
+#btn-menu {
+    display: none;
+}
+
+.container-menu {
+    position: absolute;
+    background-color: var(--main-bg-color);
+    width: 80%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    transform-origin: right;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn-menu:checked~.container-menu {
+    transform: scale(1);
+    transition: transform 0.5s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.cont-menu {
+    width: 100%;
+    height: 100vh;
+}
+
+
+/*hamburger*/
+.myReserv p, .myFavouriteLink{
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    color: var(--main-text-color);
+}
+.myFavouriteLink{
+    text-decoration: none;
+}
+
+/*pop up*/
+.swal2-container.swal2-center>.swal2-popup{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #87adbd !important;
+    background-color: var(--main-text-color);
+}/*#87adbd*/
+.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation{
+    background-color: rgba(84, 87, 118, 0.6);
+}
+.swal2-styled.swal2-confirm{
+    font-weight: 600;
+}
+
+/*
+.swal2-styled.swal2-confirm{
+    font-weight: 500;
+    color: var(--main-text-color) !important;
+    background-color: #87adbd;
+}*/
+
+
+
+/* ----------------------FIN-------------------------------- */
+@media screen and (max-width: 780px) {
+    
+
+    .blockLogo {
+        height: 50px;
+    }
+
+    .blockLogo img {
+        height: 45px;
+    }
+    
+}
+
+@media screen and (max-width: 765px) {
+    .button {
+        max-width: 121px;
+    }
+
+    .blockLogo p {
+        display: none;
+    }
+    .hrH{
+        margin: 1rem 0.5rem 0.5rem 0.5rem;
+    }
+    .blockUser{
+        font-size: 14.0px;
+    
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .myf, .hrH {
+        display: none;
+    }
+
+    .blockLogo p,
+    .button,
+    .user-media,
+    .user-container>a,
+    .showUser a {
+        display: none;
+    }
+
+    .hamburguer {
+        display: block;
+        color: var(--main-text-color);
+    }
+}

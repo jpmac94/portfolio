@@ -1,0 +1,236 @@
+/*-----General styles-----*/
+.blockSearch {
+    background-color: var(--secondary-text-color);
+    padding: 2rem 0rem 1rem;
+}
+
+.blockSearch h1 {
+    text-align: center;
+    color: var(--basic-color);
+}
+
+/*-----City and Calendar styles-----*/
+.divMenu {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    padding: 15px 40px;
+    gap: 10px;
+}
+
+.container-city,
+.container-calendar {
+    width: 40%;
+}
+
+#container-default-value {
+    display: flex;
+}
+
+.location-default {
+    margin: 0.3rem 0.7rem 0rem 0.5rem;
+    height: 1.5rem;
+
+}
+
+.css-7e5adh-singleValue #default {
+    margin-top: 8px;
+    font-size: 0.98rem;
+}
+
+#default {
+    font-weight: 400;
+    color: rgba(84, 87, 118, 0.9);
+}
+
+#ciudad {
+    margin-left: 1rem;
+    font-size: 15px;
+    color: black;
+}
+
+#pais {
+    margin-left: 1rem;
+    font-size: 12px;
+    color: gray;
+}
+
+#opcion {
+    display: flex;
+}
+
+/*#opcion img{
+    padding-right: 12px;
+}*/
+.css-7e5adh-singleValue #opcion {
+    display: flex;
+}
+
+.css-7e5adh-singleValue #enlinea {
+    display: flex;
+}
+
+.css-7e5adh-singleValue img {
+    size: 8px;
+    padding-top: 5px;
+}
+
+.css-7e5adh-singleValue #pais {
+    font-size: 16px;
+    padding-left: 8px;
+    padding-top: 8px;
+}
+
+.css-7e5adh-singleValue #ciudad::after {
+    content: " ,";
+}
+
+.css-7e5adh-singleValue #ciudad {
+    font-size: 16px;
+    padding-top: 8px;
+}
+
+/*-----City styles-----*/
+.selectorCity {
+    width: 100%;
+    height: 40px;
+    top: 163px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+    color: var(--secondary-text-color);
+}
+
+.css-319lph-ValueContainer {
+    font-size: 14px;
+}
+
+.bscalendar {
+    position: absolute;
+    margin: 0.75rem 1.2rem;
+    color: var(--secondary-text-color);
+    stroke-width: 0.3;
+}
+
+/*-----Calendar styles-----*/
+.rmdp-container {
+    width: 100%;
+}
+
+.rmdp-input {
+    width: 100%;
+    height: 2.5rem !important;
+    padding-left: 3rem !important;
+
+    font-size: 0.98rem;
+    color: var(--secondary-text-color);
+    
+}
+
+.rmdp-container .icon {
+    left: 2%;
+}
+
+.css-1pahdxg-control {
+    background-color: var(--basic-color) !important;
+    border-color: var(--basic-color) !important;
+    box-shadow: 0 0 1 var(--basic-color) !important;
+}
+
+.css-9gakcf-option:active {
+    background-color: var(--secondary-text-color) !important;
+}
+
+.css-9gakcf-option {
+    background-color: var(--secondary-text-color) !important;
+}
+
+.rmdp-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-calendar .c .rmdp-calendar {
+    width: 100%;
+}
+/*------Buttons styles------*/
+.button-block-search {
+    width: 90%;
+
+    padding: 0.8rem 3.1rem;
+    margin-bottom: 1rem;
+
+    border: none;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+
+    cursor: pointer;
+
+    background-color: var(--secondary-color);
+    color: var(--basic-color);
+}
+
+.button-block-search:hover {
+    background-color: var(--basic-color);
+    color: var(--secondary-color);
+    transition: 0.6s;
+}
+
+.container-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*-----Medias queries-----*/
+@media (max-width: 768px) {
+    .divMenu {
+        padding: 5px;
+    }
+
+    .blockSearch {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 470px) {
+
+.container-calendar .c .rmdp-calendar {
+    width: 95vw;
+}
+    .divMenu {
+        flex-direction: column;
+    }
+
+    .container-city,
+    .container-calendar {
+        width: 100%;
+    }
+
+    .container-search {
+        width: 100%;
+    }
+
+    .blockSearch {
+        padding: 10px 4px;
+    }
+
+    .blockSearch h1 p {
+        font-size: 25px;
+        padding-bottom: 0;
+    }
+
+    .button-block-search {
+        width: 100%;
+    }
+
+    .div.rmdp-day-picker {
+        width: 100%;
+        justify-content: center;
+    }
+}

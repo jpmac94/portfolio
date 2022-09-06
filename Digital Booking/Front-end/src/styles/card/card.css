@@ -1,0 +1,134 @@
+.contenedor-list {
+  padding: 1rem 2rem;
+
+  background-color: var(--basic-color);
+}
+
+.container-recommendation {
+  padding: 0rem 2rem;
+}
+
+/*-----Cards styles-----*/
+.property-card {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--main-bg-color);
+  flex: 1 2 150px;
+  height: 100%;
+  border-radius: 0px 0px 8px 8px;
+  cursor: pointer;
+}
+.property-card:hover {
+  z-index: 10;
+  transform: scale(1.07);
+  transition: 1.5s;
+}
+
+.property-image {
+  height: 10em;
+  width: 100%;
+  position: relative;
+
+  border-radius: 8px 8px 0px 0px;
+}
+
+.property-description h3 {
+  color: var(--main-text-color);
+  font-size: 15.6px;
+}
+
+.property-description > p {
+  font-size: 0.8rem;
+  color: rgba(84, 87, 118, 0.7);
+}
+
+.property-description {
+  background-color: var(--basic-color);
+  padding: 0.5em 1em;
+  border-radius: 0px 0px 10px 10px;
+ 
+}
+
+.filtro-activo {
+  display: flex;
+  gap: 1rem;
+}
+
+.filtro-activo .property-image {
+  height: 0px;
+  transition: 1.5s;
+}
+
+.filtro-activo .property-card {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--main-bg-color);
+  flex: 1 2 150px;
+
+  border-radius: 8px;
+
+  border: 3px solid rgba(84, 87, 118, 0.7);
+
+
+}
+
+.filtro-activo .property-card:hover {
+  z-index: 10;
+  transform: scale(1);
+
+}
+
+
+.property-card a{
+  text-decoration: none;
+}
+/*------ Card recommendation stules-----*/
+
+.contenedor-list h2 {
+  padding-bottom: 1rem;
+  color: var(--main-text-color);
+}
+
+.container-recommendation {
+  margin-bottom: 3rem;
+}
+
+.list-recos {
+  padding: 1rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.buttonDetalle {
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+
+  border-radius: 8px;
+  border: 1px solid var(--main-bg-color);
+
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+}
+
+@media screen and (max-width: 768px) {
+  .property-card {
+    min-width: 40%;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .list {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 2000px) and (max-width: 2560px) {
+  .property-card {
+    height: 18rem;
+  }
+  .property-image {
+    height: 80%;
+  }
+}

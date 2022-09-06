@@ -1,0 +1,61 @@
+.headerMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 1rem 1rem 5px;
+
+    color: var(--basic-color);
+    background-color: var(--secondary-color);
+}
+
+.menuAncore {
+    font-size: 25px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    color: var(--basic-color);
+}
+
+.headerMenu h3 {
+    align-self: flex-end;
+}
+
+.menuButtons {
+    text-decoration: none;
+    text-align: end;
+
+    padding: 1rem;
+
+}
+
+.hr-menu-close {
+    margin: 6px 0px;
+    border: none;
+    height: 1px;
+
+    color: var(--secondary-text-color);
+    background: var(--secondary-text-color);
+}
+
+
+
+.menuButtons a {
+    text-decoration: none;
+    margin: 5px;
+    color: var(--main-text-color);
+    font-weight: 600;
+}
+
+.logosRedes {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    color: var(--secondary-text-color);
+    margin: 10px 15px 20px 0px;
+
+    font-size: 1.25rem;
+    text-align: end;
+    letter-spacing: 1rem;
+}

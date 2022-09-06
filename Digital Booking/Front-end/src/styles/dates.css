@@ -1,0 +1,186 @@
+
+.c .rmdp-calendar{
+    width: 58vw;
+}
+.c .rmdp-day-picker{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.c .rmdp-arrow-container  {
+position:relative !important;
+top:136px;
+height:25px;
+width: 25px;
+padding-top: 3px;
+}
+ .rmdp-arrow-container.disabled:hover .rmdp-arrow{
+    border-color:var(--basic-color)
+}
+.c .rmdp-header{
+    font-size: 20px;
+}
+.c .rmdp-arrow{
+    border:solid var(--secondary-color);
+    border-width: 0 2px 2px 0;
+    padding: 8px;
+} 
+.c .rmdp-arrow-container{
+    height: 34px;
+width: 34px;
+}
+.c .rmdp-arrow-container:hover{
+background-color: var(--secondary-color);
+
+}
+
+.c .rmdp-day-picker> div:first-of-type{
+border-right: 1px solid var(--secondary-color);
+}
+.c .rmdp-day-picker> div{
+    padding: 0px 20px;
+    flex-grow: 1;
+}
+
+.c .rmdp-calendar>div:last-of-type{
+position: unset !important;
+}
+.c .rmdp-week-day{
+    color: var(--main-text-color);
+}
+
+.c .rmdp-range{
+    background-color:var(--secondary-color) ;
+    border-radius: 50%;
+}
+
+.c .rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span:hover{
+    background-color: #16a18ebe;
+}
+
+.c .rmdp-header-values{
+color:var(--secondary-color);
+}
+.container-all-dates{
+    background-color:  rgba(84, 87, 118, 0.1);;
+    padding: 1rem 3rem;
+}
+h2.c.h2{
+padding-bottom: 15px;
+color: var(--main-text-color);
+}
+.c .container-dates-confirm{
+   display:flex;
+   flex-direction: column;
+   justify-content: space-between;
+    background-color: var(--basic-color);
+    width: 350px;
+   height: 117px;
+    padding:15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    width: 30vw;
+}
+.c .container-dates-confirm>p{
+align-self: center;
+}
+.c.container-dates{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 1134px){
+    .c .rmdp-day-picker{
+        padding-left: 10px;
+        padding-right: 10px;
+        
+    }
+    
+    .c .rmdp-day-picker> div{
+        width: 25vw;
+    }
+    .c .rmdp-arrow-container{
+        width: 20px;
+        height:30px;
+    }
+    .c .rmdp-calendar{
+        width: 54vw;}
+.c .rmdp-arrow {
+   padding: 5px;
+}
+}
+@media screen and (max-width:768px) {
+    
+    
+    .c .rmdp-day-picker> div{
+        width: 40vw;
+    }
+    .c .rmdp-arrow-container{
+        width: 20px;
+        height:30px;
+    }
+    .c .rmdp-calendar{
+        width: 86vw;
+    }
+
+.c .rmdp-arrow {
+   padding: 5px;
+}
+.container-dates{
+    flex-direction: column;
+  }
+
+  .c.container-dates-confirm{
+    width: 100%;
+    background-color:rgba(84, 87, 118, 0);
+    box-shadow: none;
+flex-direction: row;
+height: fit-content;
+  }
+  .c.buttonDetail{
+      width: 50%;
+  }
+  .c .container-dates-confirm>p{
+    width: 50%;
+  }
+  .c .rmdp-arrow-container {
+           top:21px;
+
+  }
+  
+}
+
+@media screen and (max-width: 470px) {
+    .c .rmdp-calendar{
+        width: 95vw;
+    }
+    .container-all-dates{
+        padding: 1rem 0.5rem;
+        margin-bottom: 3rem;
+    }
+    .c .rmdp-day-picker> div:first-of-type{
+        border: none;
+    }
+    .c.container-dates {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .c.container-dates-confirm {
+        flex-direction: column;
+        
+    }
+    .c.container-dates-confirm>p{
+        width: 100%;
+        align-self: flex-start;
+        margin-bottom: 10px;
+    }
+    .c.buttonDetail{
+        width: 100%;
+    }
+    .h2.c.h2{
+        font-size: 1.4rem;
+    }
+    
+}
+
+

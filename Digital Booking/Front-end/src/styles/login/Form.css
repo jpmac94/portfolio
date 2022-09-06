@@ -1,0 +1,13 @@
+.container-forms{
+  margin-top: 150px;
+}
+#error-login{
+  background-color: rgb(236, 138, 138);
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  
+margin-bottom: 10px;
+  
+}
+
